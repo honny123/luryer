@@ -1,0 +1,79 @@
+@import '../header.css';
+@import '../footer.css';
+@import 'aside.css';
+.clearfix{
+	zoom: 1;
+}
+.clearfix:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+:link, :visited, ins, a {
+color: #404040;
+text-decoration: none;
+}
+.wrapbox {
+background: #eeeeee;
+height: auto;
+padding-top: 30px;
+}
+#help {
+/* width: 960px; */
+margin: 0 auto;
+text-align: left;
+}
+.content {
+width: 1000px;
+margin: 0 auto;
+height: auto;
+padding-bottom: 30px;
+}
+.con {
+width: 758px;
+background: #fff;
+min-height: 1000px;
+color: #333;
+margin-left: 10px;
+border: 1px solid #e5e5e5;
+float: left;
+height: auto;
+padding-top: 25px;
+padding-left: 20px;
+padding-right: 20px;
+font-size: 12px;
+line-height: 1.5;
+font-family: "Hiragino Sans GB",Tahoma,arial,宋体,sans-serif;
+}
+.con h1, .con h2, .con h3 {
+font-family: "microsoft yahei";
+}
+.con h1 {
+font-size: 26px;
+height: 50px;
+}
+.con h3 {
+font-size: 14px;
+font-weight: bold;
+height: 30px;
+padding-bottom: 2px;
+}
+
+.con .box {
+padding-bottom: 40px;
+}
+.con p {
+line-height: 25px;
+padding-bottom: 10px;
+}
+.linksList li {
+float: left;
+width: 120px;
+padding-right: 10px;
+padding-bottom: 10px;
+}
+.linksList li a {
+color: #444;
+}

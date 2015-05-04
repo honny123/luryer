@@ -1,0 +1,48 @@
+.left-nav {
+width: 190px;
+float: left;
+height: auto;
+font-family: 'microsoft yahei';
+font-size: 16px;
+text-align: center;
+}
+.left-nav ul {
+width: 188px;
+border: 1px solid #e5e5e5;
+height: auto;
+margin-bottom: 10px;
+}
+.left-nav ul.pdt {
+padding-top: 15px;
+background: #fff;
+}
+.left-nav ul li, .left-nav ul div {
+color: #333;
+background: #fff;
+border-left: 3px solid #fff;
+cursor: pointer;
+height: 35px;
+line-height: 35px;
+}
+.left-nav ul li:hover {
+border-left: 3px solid #f80;
+background: #f7f7f7;
+}
+.left-nav ul li:hover a {
+color: #f80;
+}
+.left-nav ul li.cur {
+color: #f80;
+border-left: 3px solid #f80;
+background: #f7f7f7;
+}
+.left-nav ul li a {
+display: block;
+width: 180px;
+height: 35px;
+line-height: 35px;
+text-align: center;
+}
+.left-nav ul li.cur a {
+color: #f80;
+}

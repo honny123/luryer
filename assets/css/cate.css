@@ -1,0 +1,178 @@
+@import 'header.css';
+@import 'footer.css';
+.clearfix{
+	zoom:1;
+}
+.clearfix:after {
+visibility: hidden;
+display: block;
+font-size: 0;
+content: " ";
+clear: both;
+height: 0;
+}
+a{
+	text-decoration:none;
+}
+.fontYaHei {
+font-family: "Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Microsoft YaHei",\9ED1\4F53,\5b8b\4f53,sans-serif;
+}
+.qyer_head_crumbg {
+width: 100%;
+min-width: 960px;
+font-size: 12px;
+line-height: 14px;
+margin: 20px 0;
+text-align: left;
+}
+.qyer_head_crumb {
+width: 980px;
+height: 14px;
+margin: 0 auto;
+color: #636363;
+}
+.qyer_head_crumb .text {
+float: left;
+display: inline;
+position: relative;
+}
+.qyer_head_crumb a {
+font-weight: bold;
+color: #f80;
+text-decoration: none;
+}
+.qyer_head_crumb .space {
+float: left;
+display: inline;
+padding: 0 7px;
+font-family: \5b8b\4f53,sans-serif;
+}
+.bbs_listtop {
+width: 980px;
+margin: 0 auto;
+}
+.bbs_listtop .pic {
+float: left;
+}
+.bbs_listtop .info {
+float: left;
+padding-left: 10px;
+width: 590px;
+}
+.bbs_listtop .title {
+font-size: 24px;
+line-height: 36px;
+color: #1e774b;
+}
+.bbs_listtop .text {
+font-size: 14px;
+color: #636363;
+}
+.bbs_sldline2 {
+width: 100%;
+height: 2px;
+overflow: hidden;
+margin: 30px 0;
+background-color: #d7d7d7;
+}
+.lay_wrap {
+width: 980px;
+margin: 0 auto;
+font: 12px/1.5 "Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB",\5b8b\4f53,sans-serif;
+}
+.lay_main {
+float: left;
+width: 680px;
+}
+.bbs_threadlist {
+margin-bottom: 30px;
+}
+.bbs_threadlist .item {
+border-bottom: 1px dotted #d7d7d7;
+padding: 15px 10px;
+}
+.bbs_threadlist .titles {
+line-height: 18px;
+word-wrap: break-word;
+word-break: break-all;
+}
+.bbs_threadlist .titles .tit {
+font-size: 16px;
+}
+.bbs_threadlist .titles .titjh {
+color: #f80;
+}
+.bbs_threadlist .titles .titjh:hover{
+	color:#0073b6;
+	text-decoration:underline;
+}
+.bbs_threadlist .infos {
+position: relative;
+color: #a4a4a4;
+padding-top: 6px;
+}
+.bbs_threadlist .info {
+position: absolute;
+right: 0;
+bottom: 0;
+float: right;
+color: #a4a4a4;
+}
+.bbs_threadlist .info .views, .bbs_threadlist .info .sum {
+background: url(../images/listinfo.png) no-repeat;
+}
+.bbs_threadlist .info .views {
+padding-left: 21px;
+background-position: 0 1px;
+}
+.bbs_threadlist .info .sum {
+padding-left: 17px;
+background-position: 0 -28px;
+margin-left: 20px;
+}
+.bbs_threadlist .info .gap {
+margin: 0 13px;
+}
+.bbs_threadlist .tag {
+display: inline-block;
+padding: 0 3px;
+background: #6faf8e;
+border-radius: 5px;
+color: #fff;
+margin-right: 10px;
+vertical-align: top;
+}
+.bbs_threadlist .tag:hover {
+background-color: #5fa678;
+text-decoration: none;
+}
+.bbs_threadlist .infos .reply a {
+color: #a4a4a4;
+}
+.bbs_threadlist .infos .reply a:hover{
+	text-decoration:underline;
+}
+.ui_page {
+float: right;
+}
+.ui_page a{
+display: inline-block;
+padding: 0 10px;
+vertical-align: middle;
+font-size: 14px;
+line-height: 24px;
+color: #636363;
+cursor:pointer;
+}
+.ui_page a:hover { 
+	background:#e0f1e1; 
+	border-radius:3px; 
+	text-decoration:none; 
+	color:#323232;
+}
+.ui_page .ui_page_item_current,.ui_page .ui_page_item_current:hover {
+background: #5ea67c;
+border-radius: 3px;
+font-weight: 700;
+color: #fff;
+}
