@@ -23,6 +23,6 @@
             <a rel="nofollow" href="<?php echo site_url('./'); ?>">luryer.com</a> |
             <a target="_blank" href="<?php echo site_url('./company'); ?>" rel="nofollow">营业执照</a> |
             <a target="_blank" href="http://www.miitbeian.gov.cn/" rel="nofollow">ICP证：浙ICP备15008658号</a>&nbsp;&nbsp;
-            <a target="_blank" href="<?php echo site_url('./'); ?>">杭州响马科技有限公司</a>
+            <a target="_blank" href="<?php echo site_url('./xiangma'); ?>">杭州响马科技有限公司</a>
         </p>
     </div>

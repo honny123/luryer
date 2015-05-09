@@ -6,6 +6,7 @@
 		<ul class="pdt">
 			<li class="<?php echo $path == 'aboutus'?'cur':''; ?>"><a href="<?php echo site_url('./aboutus'); ?>">关于我们</a></li>
 			<li class="<?php echo $path == 'contactus'?'cur':''; ?>"><a href="<?php echo site_url('./contactus'); ?>">联系我们</a></li>
+			<li class="<?php echo $path == 'xiangma'?'cur':''; ?>"><a href="<?php echo site_url('./xiangma'); ?>">公司简介</a></li>
 			<li class="<?php echo $path == 'advertising'?'cur':''; ?>"><a href="<?php echo site_url('./advertising'); ?>">广告服务</a></li>
 			<li class="<?php echo $path == 'privacy'?'cur':''; ?>"><a href="<?php echo site_url('./privacy'); ?>">隐私保护</a></li>
 			<li class="<?php echo $path == 'duty'?'cur':''; ?>"><a href="<?php echo site_url('./duty'); ?>">免责声明</a></li>

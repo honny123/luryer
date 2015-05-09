@@ -307,6 +307,9 @@ class Welcome extends CI_Controller {
 	public function company(){
 		$this->load->view('static/company');
 	}
+	public function xiangma(){
+		$this->load->view('static/xiangma');
+	}
 }
 
 /* End of file welcome.php */

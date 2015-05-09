@@ -57,6 +57,7 @@ $route['agreement'] = 'welcome/agreement';
 $route['sitemap'] = 'welcome/sitemap';
 $route['rules'] = 'welcome/rules';
 $route['company'] = 'welcome/company';
+$route['xiangma'] = 'welcome/xiangma';
 $route['admin'] = 'admin/login';
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
