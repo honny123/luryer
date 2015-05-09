@@ -4,6 +4,7 @@
     <meta charset="utf-8"/>
     <meta property="qc:admins" content="361526403164521526375" />
     <title>裸游网</title>
+    <link rel="shortcut icon" href="/favicon.ico" /> 
     <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/normalize.css'); ?>"/>
     <link rel="stylesheet" type="text/css" href="<?php echo site_url('assets/css/index.css'); ?>"/>
   </head>
