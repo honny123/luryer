@@ -49,7 +49,7 @@ $(function(){
                 email_err('您输入的邮箱格式有误！');
               }
             } else {
-              $(".reg_ipt").append("<ul class='email_tip'><li>" + $val + "@qq.com</li><li>" + $val + "@gmail.com</li><li>" + $val + "@126.com</li><li>" + $val + "@163.com</li><li>" + $val + "@hotmail.com</li><li>" + $val + "@yahoo.com</li><li>" + $val + "@yahoo.com.cn</li><li>" + $val + "@live.com</li><li>" + $val + "@sohu.com</li><li>" + $val + "@sina.com</li></ul>");
+              $(".reg_ipt").append("<ul class='email_tip'><li>" + $val + "@qq.com</li><li>" + $val + "@gmail.com</li><li>" + $val + "@126.com</li><li>" + $val + "@163.com</li><li>" + $val + "@hotmail.com</li><li>" + $val + "@yahoo.com</li><li>" + $val + "@yahoo.com.cn</li><li>" + $val + "@live.com</li><li>" + $val + "@sohu.com</li><li>" + $val + "@sina.com</li><li>"+$val+"@sina.cn</li></ul>");
             }
           }
         })
@@ -62,7 +62,7 @@ $(function(){
         } else {
           if (len > 0) {
             $val_end = $val.substring(len + 1, leng);
-            if ($val_end.indexOf('.com') >= 0) {
+            if ($val_end.indexOf('.com') >= 0||$val_end.indexOf('.cn') >= 0) {
             	 $.get('register/unique',{adress:$val},function(data){
 		        	if(data == 'fail'){
 		        		email_err('您输入的邮箱已存在！');
