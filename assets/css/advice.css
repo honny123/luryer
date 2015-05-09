@@ -1,5 +1,8 @@
 @import 'header.css';
 @import 'footer.css';
+a{
+	text-decoration:none;
+}
 .wrap {
 width: 100%;
 background: #f9f9f9;
