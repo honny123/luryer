@@ -365,7 +365,8 @@ class CI_Email {
 	 */
 	public function subject($subject)
 	{
-		$subject = $this->_prep_q_encoding($subject);
+		//$subject = $this->_prep_q_encoding($subject);
+		$subject = '=?'. $this->charset .'?B?'. base64_encode($subject) .'?=';
 		$this->_set_header('Subject', $subject);
 		return $this;
 	}
@@ -1295,7 +1296,7 @@ class CI_Email {
 
 		// Line length must not exceed 76 characters, so we adjust for
 		// a space, 7 extra characters =??Q??=, and the charset that we will add to each line
-		$limit = 75 - 7 - strlen($this->charset);
+		$limit = 200 - 7 - strlen($this->charset);
 
 		// these special characters must be converted too
 		$convert = array('_', '=', '?');

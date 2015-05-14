@@ -4,43 +4,36 @@ class Register extends CI_Controller {
 
 	public function sendMail()
 	{
+		
+		
 		$adress = $this->input->get("adress");
-		$this->load->model('member_model');
 		$activeCode = rand(10000000,99999999);
-		$config['adress'] = $adress;
-		$config['activeCode'] = $activeCode;
-		$this->load->helper('sendmail');
-		$result = sendmail($config);
-		print_r($result);
-		die;
-		// $this->member_model->addMail($adress,$activeCode);
-		// //以下设置Email参数  
-        // $config['protocol'] = 'smtp';  
-        // $config['smtp_host'] = 'smtp.yeah.net';  
-		// $config['smtp_port'] = 25;
-        // $config['smtp_user'] = 'luryer@yeah.net';  
-        // $config['smtp_pass'] = 'wlsh.425071817';  
-        // $config['charset'] = 'utf-8';
-		// $config['wordwrap'] = TRUE;
-		// $this->load->library('email',$config);
-		// $sendMessage = '尊敬的'.$adress.":\n感谢您注册裸游网，点击下面链接激活账户。\n".site_url('active?adress='.$adress.'&code='.$activeCode);
-		// $this->email->from('luryer@yeah.net', '裸游网');
-		// $this->email->to($adress); 		
-		// $this->email->subject('裸游网账户激活');
-		// $this->email->message($sendMessage); 		
-		// $this->email->send();
-		// echo $this->email->print_debugger();
-		// if($this->email->send()){
-			// echo "success";
-		// }else{
-			// echo "fail";
-		// }
+		$this->load->model('member_model');
+	    $this->load->library('email');
+	    //$this->email->initialize($config);
+	    $sendMessage = "尊敬的".$adress.":\r\n感谢您注册裸游网，点击下面链接激活账户。\r\n".site_url('active?adress='.$adress.'&code='.$activeCode)."\r\n"."\r\n(如果不能直接点击地址，请将地址复制到地址栏中.)";
+		$this->email->from('luryer@yeah.net', '裸游网');
+		$this->email->to($adress); 		
+		$this->email->subject('裸游网账户激活');
+		$this->email->message($sendMessage); 		
+		$this->email->send();
+		//var_dump($adress);
+	    if ($this->email->send()) {
+			$this->member_model->addMail($adress,$activeCode);
+	    	echo 'success';
+	    } else {
+	   		 echo 'false';
+	    }
+		
+		
+		
+		
 	}
 	public function unique(){
 		$adress = $this->input->get('adress');
 		$this->load->model('member_model');
 		$result = $this -> member_model->getEmail($adress);
-		if($result > 0){
+		if($result>0){
 			echo 'fail';
 		}else{
 			echo "success";

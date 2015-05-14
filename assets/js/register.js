@@ -12,7 +12,7 @@ $(function(){
       function email_send_ok(adress) {
         $('.ipt_list').children().remove();
         $('.ipt_list').append("<li class='reg_send_ok'>" + "<span class='email_succ'></span>" + "<span>验证邮件已发送到邮箱</span>" + "<a href='javascript:;' class='reg_email'>"+adress+"</a>" + "</li><li class='reg_send_ok'><span>提示：</span><span style='font-size:12px;'>电子邮件偶尔会有延时状况，请耐心等待，如果收件箱没有请尝试到垃圾邮件里找找看</span></li>");
-        $('.main_item').append("<div class='email_verify_box'>" + "<a href='javascript:;' data-id='"+adress+"' class='email_login'>登录邮箱验证</a>" + "<a href='javascript:;' class='email_resend'>重新发送验证邮件</a>" + "</div>")
+        $('.main_item').append("<div class='email_verify_box'>" + "<a href='javascript:;' data-id='"+adress+"' class='email_login'>登录邮箱验证</a>" + "<a href='javascript:;' class='email_resend'>重新发送验证邮件</a>" + "</div>");
       }
       // function set_pwd() {
         // $('.ipt_list').children().remove();
@@ -52,8 +52,8 @@ $(function(){
               $(".reg_ipt").append("<ul class='email_tip'><li>" + $val + "@qq.com</li><li>" + $val + "@gmail.com</li><li>" + $val + "@126.com</li><li>" + $val + "@163.com</li><li>" + $val + "@hotmail.com</li><li>" + $val + "@yahoo.com</li><li>" + $val + "@yahoo.com.cn</li><li>" + $val + "@live.com</li><li>" + $val + "@sohu.com</li><li>" + $val + "@sina.com</li><li>"+$val+"@sina.cn</li></ul>");
             }
           }
-        })
-      })
+        });
+      });
       $email.blur(function() {
         $(".reg_tip").children().remove();
         var $val = $email.val(), leng = $val.length, len = $val.indexOf('@');
@@ -69,13 +69,13 @@ $(function(){
 		        	}else{
 		        		email_succ();
 		        	}
-		        })
+		        });
             }
           } else {
             email_err('您输入的邮箱格式有误！');
           }
         }
-      })
+      });
       $(document).on("click", ".email_tip>li", function() {
       	var $val = $(this).html();
         $(".reg_tip").children().remove();
@@ -87,7 +87,7 @@ $(function(){
         	}else{
         		email_succ();
         	}
-        })
+        });
         return false;
       });
       $(document).on('click', '.step1_next', function() {
@@ -100,12 +100,13 @@ $(function(){
 	       			$('.reg_submit').css('display', 'none');
 	          		email_send_ok($val);
 	       		}
-	       })
+	       });
       	}
-      })
+      });
       $(document).on('click', '.email_verify_box > .email_resend', function() {
       	var _this = this,
-      		timer;
+      		timer,
+      		$val=$('.reg_email').text();
       	if(timer){
       		clearInterval(timer);
       	}
@@ -114,25 +115,25 @@ $(function(){
             $(function() {
               count--;
               $(_this).html('重新发送验证邮件('+count+'s)');
-            })
+            });
           } else {
             clearInterval(timer);
             $(_this).html('重新发送验证邮件');
           }
-        }, 1000)
+        }, 1000);
         $.get('register/sendMail',{adress:$val},function(data){
        		if(data =='success'){
        			clearInterval(timer);
        			$(_this).html('发送成功！');
        		}
-       })	
-      })
+       });	
+      });
       // $(document).on('click', '.email_login', function() {
         // $('.step').removeClass('step1').addClass('step2');
         // $('.reg_submit').show();
         // $('.register_btn').removeClass('step1_next').addClass('step2_next');
         // set_pwd();
-      // })
+      // });
     $('#pwd').keyup(function() {
       var $val = $('#pwd').val(), leng = $val.length;
       if (leng > 0 && leng < 7) {
@@ -142,20 +143,20 @@ $(function(){
       } else if (leng > 13) {
         $('.pwd_save').addClass('pwd_save_high').removeClass('pwd_save_middle pwd_save_low');
       }
-    })
+    });
       $('.ipt_list').on('blur', '.reg_pwd', function() {
         $('.reg_tip').children().remove();
         var $val = $('#pwd').val();
         if ($val == '') {
-          $('.reg_pwd>.reg_tip').append("<span class='reg_err'></span><span>密码为空！</span>")
+          $('.reg_pwd>.reg_tip').append("<span class='reg_err'></span><span>密码为空！</span>");
         } else if ($val.length < 6) {
-          $('.reg_pwd>.reg_tip').append("<span class='reg_err'></span><span>请输入6位以上密码！</span>")
+          $('.reg_pwd>.reg_tip').append("<span class='reg_err'></span><span>请输入6位以上密码！</span>");
         }
-      })
+      });
       $('.ipt_list').on('focus', '.reg_re_pwd', function() {
         $('.reg_re_pwd>.reg_tip').children().remove();
         $('.reg_re_pwd>.reg_tip').append("<span class='reg_err'></span><span>请再次输入密码！</span>");
-      })
+      });
       $('.ipt_list').on('blur', '.reg_re_pwd', function() {
         $('.reg_re_pwd>.reg_tip').children().remove();
         if ($('#re_pwd').val() == '') {
@@ -165,7 +166,7 @@ $(function(){
         } else {
           $('.reg_re_pwd>.reg_tip').append("<span class='reg_err'></span><span>两次密码输入不一致，请重新输入</span>");
         }
-      })
+      });
       $(document).on('click', '.step2_next', function() {
         var $val = $('#pwd').val(), leng = $val.length;
         if (leng > 5 && leng < 17 && $val == $('#re_pwd').val()) {
@@ -176,24 +177,24 @@ $(function(){
        	  		$('.step').removeClass('step2').addClass('step3');
 		          $('.ipt_list').children().remove();
 		          $('.reg_submit').remove();
-		          $('.ipt_list').append("<li class='reg_succ'>恭喜您，注册成功！<a href='../luoyou'>去裸游网首页</a></li>" + "<li class='reg_perfect'>为了方便您更好的享受裸游服务，建议完善您的资料</li>")
+		          $('.ipt_list').append("<li class='reg_succ'>恭喜您，注册成功！<a href='../luoyou'>去裸游网首页</a></li>" + "<li class='reg_perfect'>为了方便您更好的享受裸游服务，建议完善您的资料</li>");
        	  	}else{
        	  		alert('密码设置错误！');
        	  	}
-       	  })
+       	  });
         }
-      })
+      });
       $("a.agreement").on("click",function(){
           $("#dyPop").prev(".divMask").show().end().show();
-      })
+      });
       $("#dyClose").on("click",function(){
         $("#dyPop").hide().prev(".divMask").hide();
-      })
+      });
       $(document).on("click",'.email_verify_box > .email_login',function(){
       	var adress = $(this).data('id'),
       		start = adress.indexOf('@'),
       		end = adress.indexOf('.com'),
       		result = adress.substring(start+1,end);
-      	window.open('http://mail.'+result+'.com')
-      })
-})
+      	window.open('http://mail.'+result+'.com');
+      });
+});

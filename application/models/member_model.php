@@ -38,7 +38,7 @@ class Member_model extends CI_Model {
 	return $this->db->affected_rows();
   }
   function getEmail($adress){
-  	return  $this->db->get_where("t_member",array('email'=>$adress))->num_rows();
+  	return $this->db->get_where('t_member',array('email'=>$adress,'status'=>1))->num_rows();
   }
   function savePassword($mail,$code,$password){
   	$data = array('password'=>$password);
